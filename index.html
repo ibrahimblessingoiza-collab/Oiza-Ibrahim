@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oiza Ibrahim — Meta Ads Specialist</title>
+<meta name="description" content="Meta & TikTok Ads Specialist. 566% growth. 23x ROAS. Live Meta Ads Masterclass for Nigerian business owners — May 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ──────────────────────────────────────────
+   DESIGN TOKENS & SETUP
+────────────────────────────────────────── */
+:root {
+  --ink:    #0a0a0a;
+  --ink2:   #111111;
+  --ink3:   #1a1a1a;
+  --line:   #222;
+  --grey1:  #999; /* slightly brighter for readability */
+  --grey2:  #555;
+  --cream:  #f0ede6;
+  --lime:   #c8ff00;
+  --lime2:  #a8d400;
+  --coral:  #ff4d2e;
+
+  /* Theme specifics */
+  --lime-btn: #c8ff00;
+  --lime-btn-text: #0a0a0a;
+  --nav-bg: rgba(10,10,10,.95);
+  --lime-alpha: rgba(200,255,0,.06);
+  --lime-alpha-hover: rgba(200,255,0,.4);
+
+  --display: 'Playfair Display', Georgia, serif;
+  --mono:    'IBM Plex Mono', monospace;
+  --sans:    'Manrope', system-ui, sans-serif;
+
+  /* Layout Constraints */
+  --max-w: 1200px;
+  --pad-x: max(3rem, calc((100vw - var(--max-w)) / 2));
+  --pad-x-mob: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+img, iframe { display: block; max-width: 100%; }
+a { text-decoration: none; }
+@media (max-width: 900px) { body { cursor: auto; } }
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+  --ink:    #f4f2ec;
+  --ink2:   #ffffff;
+  --ink3:   #eae7e0;
+  --line:   #dcd8ce;
+  --grey1:  #555555;
+  --grey2:  #777777;
+  --cream:  #111111;
+  --lime:   #3a7300; /* Darker green for contrast on light bg */
+  --lime2:  #2b5700;
+  --coral:  #d94022;
+  --nav-bg: rgba(244,242,236,.95);
+  --lime-alpha: rgba(58,115,0,.06);
+  --lime-alpha-hover: rgba(58,115,0,.3);
+}
+
+/* ──────────────────────────────────────────
+   CURSOR
+────────────────────────────────────────── */
+#c { position: fixed; z-index: 9999; pointer-events: none; mix-blend-mode: difference; }
+#c-dot { width: 6px; height: 6px; background: var(--lime); border-radius: 50%; position: absolute; transform: translate(-50%,-50%); transition: width .2s, height .2s; }
+#c-ring { width: 36px; height: 36px; border: 1px solid var(--lime); opacity: 0.35; border-radius: 50%; position: absolute; transform: translate(-50%,-50%); transition: width .3s, height .3s, border-color .3s; }
+body.link-hover #c-dot { width: 14px; height: 14px; }
+body.link-hover #c-ring { width: 60px; height: 60px; border-color: var(--lime); opacity: 0.6; }
+@media (max-width: 900px) { #c { display: none; } }
+
+/* ──────────────────────────────────────────
+   NAV & MOBILE MENU
+────────────────────────────────────────── */
+nav {
+  position: fixed; inset: 0 0 auto;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem var(--pad-x);
+  transition: background .4s, padding .3s;
+}
+nav.solid { background: var(--nav-bg); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); padding-top: 1rem; padding-bottom: 1rem; }
+.nav-logo { font-family: var(--display); font-size: 1.35rem; font-weight: 900; color: var(--cream); letter-spacing: -.01em; }
+.nav-logo sup { font-family: var(--mono); font-size: .55rem; color: var(--lime); letter-spacing: .1em; text-transform: uppercase; vertical-align: super; margin-left: .3rem; }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--grey1); transition: color .2s; }
+.nav-links a:hover { color: var(--lime); }
+.nav-book { background: var(--lime-btn) !important; color: var(--lime-btn-text) !important; padding: .6rem 1.4rem !important; border-radius: 3px; font-weight: 600 !important; transition: background .2s, transform .2s !important; }
+.nav-book:hover { background: var(--cream) !important; color: var(--ink) !important; transform: translateY(-2px); }
+
+/* Theme Toggle Button */
+.theme-toggle { background: none; border: 1px solid var(--line); color: var(--cream); cursor: pointer; padding: .5rem; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: all .2s; margin-left: 1rem; }
+.theme-toggle:hover { border-color: var(--lime); color: var(--lime); }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+
+/* Mobile Menu Additions */
+.menu-btn { display: none; background: none; border: none; color: var(--cream); cursor: pointer; padding: .5rem; z-index: 101; transition: color .2s; }
+.menu-btn:hover { color: var(--lime); }
+.mobile-menu { position: fixed; inset: 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(15px); z-index: 200; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity .3s ease, visibility .3s; visibility: hidden; }
+.mobile-menu.open { opacity: 1; pointer-events: auto; visibility: visible; }
+.close-btn { position: absolute; top: 1.5rem; right: var(--pad-x-mob); background: none; border: none; color: var(--cream); cursor: pointer; padding: 1rem; transition: color .2s; }
+.close-btn:hover { color: var(--lime); transform: rotate(90deg); transition: transform .3s, color .2s; }
+.mob-links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 1.8rem; }
+.mob-links a { font-family: var(--display); font-size: 2.2rem; font-weight: 700; color: var(--cream); letter-spacing: -.02em; transition: color .2s; }
+.mob-links a:hover { color: var(--lime); font-style: italic; }
+.mob-links .nav-book { font-family: var(--mono) !important; font-size: .85rem !important; letter-spacing: .1em; font-style: normal !important; margin-top: 1.5rem; background: var(--lime-btn) !important; color: var(--lime-btn-text) !important; }
+
+@media (max-width: 900px) { 
+  .nav-links { display: none; } 
+  .menu-btn { display: block; }
+  nav { padding: 1.2rem var(--pad-x-mob); }
+  nav.solid { padding-top: .8rem; padding-bottom: .8rem; }
+}
+
+/* ──────────────────────────────────────────
+   HERO — SPLIT KINETIC LAYOUT
+────────────────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: 52%; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  z-index: 0;
+}
+@media (max-width: 1000px) { .hero::before { display: none; } }
+
+.hero-main {
+  display: grid;
+  grid-template-columns: 52fr 48fr;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+@media (max-width: 1000px) { .hero-main { grid-template-columns: 1fr; } }
+
+.hero-l {
+  padding: 6rem 3rem 4rem var(--pad-x);
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.hero-tag { font-family: var(--mono); font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); margin-bottom: 2rem; display: flex; align-items: center; gap: .8rem; opacity: 0; animation: up .6s .1s forwards; }
+.hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--lime); }
+.dot-blink { width: 5px; height: 5px; background: var(--lime); border-radius: 50%; animation: blink 2s infinite; display: inline-block; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+.hero-name { font-family: var(--display); font-weight: 900; font-size: clamp(4rem, 9vw, 9.5rem); line-height: .9; letter-spacing: -.04em; color: var(--cream); margin-bottom: .5rem; opacity: 0; animation: up .8s .2s forwards; }
+.hero-name-it { font-family: var(--display); font-style: italic; font-weight: 700; font-size: clamp(1.8rem, 4vw, 4rem); color: var(--lime); letter-spacing: -.02em; line-height: 1.1; opacity: 0; animation: up .8s .35s forwards; margin-bottom: 2.5rem; }
+.hero-bio { font-size: 1rem; color: var(--grey1); line-height: 1.8; max-width: 440px; font-weight: 300; opacity: 0; animation: up .7s .5s forwards; margin-bottom: 2.5rem; }
+.hero-acts { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: up .7s .65s forwards; }
+@keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.hero-r {
+  padding: 6rem var(--pad-x) 4rem 3rem;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 3rem;
+}
+@media (max-width: 1000px) {
+  .hero-l { padding: 4rem var(--pad-x-mob) 2rem; }
+  .hero-r { padding: 2rem var(--pad-x-mob) 4rem; border-top: 1px solid var(--line); gap: 2.5rem; }
+  .hero-name { font-size: clamp(3.5rem, 15vw, 6rem); }
+  .hero-name-it { margin-bottom: 1.5rem; }
+}
+
+.hero-stat-list { display: flex; flex-direction: column; opacity: 0; animation: up .7s .45s forwards; }
+.hstat { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); transition: padding .3s, background .3s; }
+.hstat:first-child { border-top: 1px solid var(--line); }
+.hstat:hover { padding-left: 1rem; }
+.hstat:hover .hs-num { color: var(--lime); transform: scale(1.05); }
+.hs-label { font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--grey2); margin-bottom: .3rem; }
+.hs-ctx { font-size: .85rem; color: var(--grey1); line-height: 1.5; font-weight: 300; max-width: 250px; }
+.hs-num { font-family: var(--display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: var(--cream); letter-spacing: -.02em; line-height: 1; white-space: nowrap; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: right center; }
+
+.hero-class-pill { background: var(--lime-alpha); border: 1px solid var(--line); border-radius: 8px; padding: 2rem; opacity: 0; animation: up .7s .75s forwards; transition: border-color .3s, background .3s; }
+.hero-class-pill:hover { border-color: var(--lime-alpha-hover); background: var(--lime-alpha); }
+.hcp-eyebrow { font-family: var(--mono); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--lime); margin-bottom: .8rem; }
+.hcp-title { font-family: var(--display); font-size: 1.6rem; font-weight: 900; color: var(--cream); margin-bottom: .6rem; line-height: 1.2; }
+.hcp-desc { font-size: .85rem; color: var(--grey1); margin-bottom: 1.5rem; line-height: 1.6; font-weight: 300; }
+.hcp-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.hcp-price { font-family: var(--display); font-size: 2rem; font-weight: 900; color: var(--lime); }
+.hcp-price span { font-family: var(--mono); font-size: .7rem; color: var(--grey2); text-decoration: line-through; margin-right: .6rem; font-weight: 300; }
+
+/* ──────────────────────────────────────────
+   SCROLLING TICKER
+────────────────────────────────────────── */
+.ticker { background: var(--lime); overflow: hidden; padding: .8rem 0; }
+.ticker-inner { display: flex; animation: run 35s linear infinite; width: max-content; }
+.ticker-item { font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); white-space: nowrap; padding: 0 2rem; display: flex; align-items: center; gap: 2rem; }
+.ticker-item::after { content: '◆'; opacity: .4; }
+@keyframes run { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ──────────────────────────────────────────
+   SECTION SHELL
+────────────────────────────────────────── */
+.sec { padding: 8rem var(--pad-x); border-bottom: 1px solid var(--line); }
+@media (max-width: 900px) { .sec { padding: 5rem var(--pad-x-mob); } }
+
+.sec-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .8rem; }
+.sec-label::before { content: ''; width: 24px; height: 1px; background: var(--lime); }
+
+.sec-h { font-family: var(--display); font-weight: 900; font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: .95; letter-spacing: -.03em; color: var(--cream); }
+.sec-h i { font-style: italic; color: var(--lime); }
+.sec-d { font-size: 1rem; color: var(--grey1); line-height: 1.8; max-width: 540px; font-weight: 300; margin-top: 1.5rem; }
+
+/* ──────────────────────────────────────────
+   MASTERCLASS — MAGAZINE SPREAD
+────────────────────────────────────────── */
+.class-section { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+@media (max-width: 1000px) { .class-section { grid-template-columns: 1fr; } }
+
+.class-l { background: var(--ink2); padding: 7rem 4rem 7rem var(--pad-x); border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.class-l::after { content: '2025'; position: absolute; bottom: -2rem; right: -1rem; font-family: var(--display); font-size: 18rem; font-weight: 900; color: rgba(200,255,0,.025); line-height: 1; pointer-events: none; letter-spacing: -.05em; }
+.class-r { padding: 7rem var(--pad-x) 7rem 4rem; display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
+@media (max-width: 1000px) { 
+  .class-l { padding: 5rem var(--pad-x-mob); border-right: none; border-bottom: 1px solid var(--line); } 
+  .class-r { padding: 5rem var(--pad-x-mob); } 
+}
+
+.class-kicker { font-family: var(--mono); font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.8rem; display: flex; align-items: center; gap: .8rem; }
+.class-kicker::before { content: ''; width: 20px; height: 1px; background: var(--lime); }
+.class-headline { font-family: var(--display); font-size: clamp(3.2rem, 6vw, 6.5rem); font-weight: 900; line-height: .9; letter-spacing: -.04em; color: var(--cream); margin-bottom: 1.8rem; }
+.class-headline em { font-style: italic; color: var(--lime); }
+.class-intro { font-size: 1rem; color: var(--grey1); line-height: 1.85; font-weight: 300; max-width: 480px; margin-bottom: 2.5rem; }
+
+.class-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; margin-bottom: 2.5rem; }
+.spec-cell { background: var(--ink2); padding: 1.2rem 1.5rem; }
+.spec-k { font-family: var(--mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--grey2); margin-bottom: .3rem; }
+.spec-v { font-size: .9rem; color: var(--cream); font-weight: 500; }
+
+.price-blk { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--ink2); }
+.price-top-bar { background: var(--ink3); padding: 2rem; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.price-was { font-family: var(--mono); font-size: .75rem; color: var(--grey2); text-decoration: line-through; letter-spacing: .05em; margin-bottom: .3rem; }
+.price-save { background: var(--coral); color: #fff; font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 3px; font-weight: 600; display: inline-block;}
+.price-amount { font-family: var(--display); font-size: 4.5rem; font-weight: 900; color: var(--lime); line-height: 1; letter-spacing: -.03em; }
+.price-amount sub { font-size: 1.6rem; color: var(--grey1); vertical-align: super; font-family: var(--mono); font-weight: 300; }
+
+.incl-list { list-style: none; padding: 2rem; }
+.incl-list li { display: flex; gap: 1rem; align-items: flex-start; font-size: .9rem; color: var(--grey1); padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.03); line-height: 1.5; }
+.incl-list li:last-child { border-bottom: none; }
+.il-ck { color: var(--lime); font-size: .8rem; flex-shrink: 0; margin-top: .15rem; font-weight: 700; }
+.spots { font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; color: var(--grey2); text-align: center; margin-top: 1.2rem; }
+.spots b { color: var(--lime); font-weight: 500; }
+
+/* ──────────────────────────────────────────
+   ABOUT — ASYMMETRIC GRID
+────────────────────────────────────────── */
+.about-wrap { display: grid; grid-template-columns: 320px 1fr; gap: 6rem; align-items: start; max-width: 1100px; }
+@media (max-width: 1000px) { .about-wrap { grid-template-columns: 1fr; gap: 3rem; } }
+.about-aside { position: sticky; top: 8rem; }
+.about-num { font-family: var(--display); font-size: 11rem; font-weight: 900; color: var(--ink2); text-shadow: -1px -1px 0 var(--line), 1px -1px 0 var(--line), -1px 1px 0 var(--line), 1px 1px 0 var(--line); line-height: .9; margin-bottom: .8rem; letter-spacing: -.05em; }
+.about-num-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: var(--lime); }
+.about-body-h { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; font-style: italic; color: var(--cream); line-height: 1.25; margin-bottom: 2rem; }
+.about-body p { font-size: 1.05rem; color: var(--grey1); line-height: 1.85; margin-bottom: 1.5rem; font-weight: 300; max-width: 600px; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.5rem; }
+.tc { font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--line); color: var(--grey1); padding: .5rem 1rem; border-radius: 4px; transition: all .2s; }
+.tc:hover { border-color: var(--lime); color: var(--lime); background: rgba(200,255,0,.05); }
+
+/* ──────────────────────────────────────────
+   SERVICES — LIST FORMAT
+────────────────────────────────────────── */
+.svc-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 0; padding-bottom: 3rem; border-bottom: 1px solid var(--line); }
+@media (max-width: 768px) { .svc-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-bottom: 2rem; } }
+.svc-header-d { font-size: 1rem; color: var(--grey1); max-width: 380px; line-height: 1.7; font-weight: 300; }
+
+.svc-row { display: grid; grid-template-columns: 60px 1.5fr 1fr auto; gap: 3rem; align-items: center; padding: 2.5rem 0; border-bottom: 1px solid var(--line); transition: padding .3s; }
+.svc-row:hover { padding-left: 1.5rem; }
+.svc-row:hover .svc-num { color: var(--lime); }
+.svc-row:hover .svc-arrow { color: var(--lime); transform: translateX(8px); }
+@media (max-width: 1000px) {
+  .svc-row { grid-template-columns: 1fr auto; gap: 1.5rem; align-items: flex-start; padding: 2rem 0; }
+  .svc-row:hover { padding-left: .5rem; }
+  .svc-num { display: none; } 
+  .svc-tags-w { display: flex; margin-top: 1rem; grid-column: 1 / -1; }
+  .svc-arrow { padding-top: .4rem; }
+}
+
+.svc-num { font-family: var(--mono); font-size: .65rem; color: var(--grey2); letter-spacing: .1em; transition: color .2s; align-self: flex-start; padding-top: .3rem; }
+.svc-name { font-family: var(--display); font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 900; color: var(--cream); letter-spacing: -.02em; line-height: 1.1; margin-bottom: .6rem; }
+.svc-desc { font-size: .9rem; color: var(--grey1); line-height: 1.6; font-weight: 300; }
+.svc-tags-w { display: flex; flex-wrap: wrap; gap: .5rem; }
+.st { font-family: var(--mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey1); border: 1px solid var(--line); padding: .3rem .7rem; border-radius: 4px; }
+.svc-arrow { font-size: 1.4rem; color: var(--line); transition: all .3s; }
+
+/* ──────────────────────────────────────────
+   RESULTS — BENTO GRID
+────────────────────────────────────────── */
+.results-bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; margin-top: 4rem; }
+.rb { background: var(--ink2); border: 1px solid var(--line); border-radius: 8px; padding: 3rem 2.5rem; transition: background .3s, border-color .3s, transform .3s; position: relative; overflow: hidden; }
+.rb:hover { background: var(--ink3); border-color: rgba(200,255,0,.3); transform: translateY(-4px); }
+.rb::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--lime), transparent); opacity: 0; transition: opacity .4s; }
+.rb:hover::after { opacity: 1; }
+
+.rb-1 { grid-column: span 4; }
+.rb-2 { grid-column: span 4; }
+.rb-3 { grid-column: span 4; }
+.rb-4 { grid-column: span 6; }
+.rb-5 { grid-column: span 6; }
+.rb-6 { grid-column: span 12; display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: center; padding: 3.5rem 4rem; }
+
+@media (max-width: 1100px) {
+  .rb-1,.rb-2,.rb-3 { grid-column: span 6; }
+  .rb-3 { grid-column: span 12; }
+  .rb-6 { gap: 2rem; padding: 2.5rem; }
+}
+@media (max-width: 768px) {
+  .results-bento { gap: 1rem; margin-top: 2.5rem; }
+  .rb { padding: 2rem 1.5rem; }
+  .rb-1,.rb-2,.rb-3,.rb-4,.rb-5 { grid-column: span 12; }
+  .rb-6 { grid-column: span 12; grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+}
+
+.rb-num { font-family: var(--display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.03em; line-height: 1; margin-bottom: .8rem; }
+.rb-title { font-size: 1.05rem; font-weight: 600; color: var(--cream); margin-bottom: .5rem; }
+.rb-ctx { font-size: .9rem; color: var(--grey1); line-height: 1.6; font-weight: 300; }
+.rb-6-num { font-family: var(--display); font-size: clamp(4rem, 8vw, 6rem); font-weight: 900; color: var(--lime); letter-spacing: -.04em; line-height: 1; white-space: nowrap; }
+.rb-6-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: var(--grey1); margin-bottom: .8rem; }
+.rb-6-desc { font-size: 1.05rem; color: var(--grey1); line-height: 1.8; font-weight: 300; }
+
+/* ──────────────────────────────────────────
+   RATES
+────────────────────────────────────────── */
+.rtoggle { display: inline-flex; background: var(--ink2); border: 1px solid var(--line); border-radius: 6px; padding: 6px; margin: 3rem 0; }
+.rtb { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; padding: .8rem 1.8rem; border-radius: 4px; border: none; background: transparent; color: var(--grey1); cursor: pointer; transition: all .2s; }
+.rtb.on { background: var(--lime-btn); color: var(--lime-btn-text); font-weight: 600; }
+
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .pkg-grid { grid-template-columns: 1fr; gap: 1rem; } }
+
+.pkg { background: var(--ink2); border: 1px solid var(--line); border-radius: 8px; padding: 3rem 2.5rem; position: relative; display: flex; flex-direction: column; transition: transform .3s, border-color .3s; }
+.pkg:hover { border-color: var(--lime-alpha-hover); transform: translateY(-5px); }
+.pkg.feat { background: var(--ink); border: 2px solid var(--lime); box-shadow: 0 10px 40px var(--lime-alpha); transform: scale(1.02); z-index: 1; }
+.pkg.feat:hover { transform: scale(1.02) translateY(-5px); }
+@media (max-width: 900px) { .pkg.feat { transform: none; } .pkg.feat:hover { transform: translateY(-3px); } .pkg { padding: 2.5rem 1.8rem; } }
+
+.pkg-badge { position: absolute; top: -14px; left: 2.5rem; font-family: var(--mono); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; background: var(--lime-btn); color: var(--lime-btn-text); padding: .4rem 1.2rem; border-radius: 20px; font-weight: 600; }
+.pkg-tier { font-family: var(--mono); font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; color: var(--grey1); margin-bottom: .6rem; }
+.pkg-name { font-family: var(--display); font-size: 2.5rem; font-weight: 900; color: var(--cream); letter-spacing: -.03em; margin-bottom: 1.2rem; line-height: 1; }
+.pkg-amount { font-family: var(--display); font-size: 3.5rem; font-weight: 900; color: var(--lime); line-height: 1; }
+.pkg-period { font-family: var(--mono); font-size: .65rem; color: var(--grey1); letter-spacing: .08em; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.pkg-desc { font-size: .9rem; color: var(--grey1); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; flex: 1; }
+.pkg-feats { list-style: none; margin-bottom: 2.5rem; }
+.pkg-feats li { display: flex; gap: .8rem; align-items: flex-start; font-size: .9rem; color: var(--grey1); padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.03); line-height: 1.5; }
+.pkg-feats li:last-child { border-bottom: none; }
+.ck { color: var(--lime); font-size: .75rem; flex-shrink: 0; margin-top: .15rem; font-weight: bold;}
+
+.pkg-cta { display: block; text-align: center; font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: 1rem; border-radius: 4px; border: 1px solid var(--line); color: var(--cream); transition: all .2s; font-weight: 500; }
+.pkg-cta:hover { border-color: var(--lime); color: var(--lime); background: rgba(200,255,0,.05); }
+.pkg.feat .pkg-cta { background: var(--lime); color: var(--ink); border-color: var(--lime); font-weight: 600; }
+.pkg.feat .pkg-cta:hover { background: #fff; border-color: #fff; }
+
+.oo-table { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.oo-head { display: grid; grid-template-columns: 1fr auto auto; gap: 2rem; padding: 1.2rem 2.5rem; background: var(--ink3); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: var(--grey1); }
+.oo-r { display: grid; grid-template-columns: 1fr auto auto; gap: 2rem; padding: 1.8rem 2.5rem; border-bottom: 1px solid var(--line); align-items: center; background: var(--ink2); transition: background .3s; }
+.oo-r:last-child { border-bottom: none; }
+.oo-r:hover { background: var(--ink3); padding-left: 3rem; }
+.oo-sn { font-size: 1.05rem; font-weight: 600; color: var(--cream); margin-bottom: .4rem; }
+.oo-sd { font-size: .9rem; color: var(--grey1); line-height: 1.6; font-weight: 300; max-width: 500px;}
+.oo-price { font-family: var(--display); font-size: 1.6rem; font-weight: 900; color: var(--lime); white-space: nowrap; }
+.oo-time { font-family: var(--mono); font-size: .7rem; color: var(--grey1); white-space: nowrap; letter-spacing: .06em; }
+@media (max-width: 768px){ 
+  .oo-head { display: none; } 
+  .oo-r { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; } 
+  .oo-r:hover { padding-left: 1.5rem; }
+  .oo-time { display: inline-block; padding: .3rem .6rem; background: var(--line); border-radius: 4px; font-size: .6rem; width: fit-content; margin-top: .5rem;}
+}
+
+.oo-note { font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey1); text-align: center; margin-top: 1.5rem; }
+.ret-sec.off { display: none; }
+.oo-sec { display: none; }
+.oo-sec.on { display: block; }
+
+/* ──────────────────────────────────────────
+   REVIEWS — AUTO-SCROLL STRIP
+────────────────────────────────────────── */
+.rv-outer { overflow: hidden; position: relative; padding-bottom: 7rem; }
+.rv-outer::before,.rv-outer::after { content:''; position:absolute; top:0;bottom:0; width:150px; z-index:2; pointer-events:none; }
+.rv-outer::before { left:0; background:linear-gradient(90deg,var(--ink),transparent); }
+.rv-outer::after { right:0; background:linear-gradient(-90deg,var(--ink),transparent); }
+@media(max-width:768px){ .rv-outer::before,.rv-outer::after{width:40px;} }
+.rv-track { display:flex; gap:1.5rem; animation:run 45s linear infinite; width:max-content; padding:.5rem 0; }
+.rv-track:hover { animation-play-state:paused; }
+.rv-card { width: 400px; flex-shrink: 0; background: var(--ink2); border: 1px solid var(--line); border-radius: 8px; padding: 2.5rem; transition: .3s; }
+@media(max-width:768px){ .rv-card { width: 300px; padding: 1.8rem; } }
+.rv-card:hover { border-color: rgba(200,255,0,.3); transform: translateY(-4px); }
+.rv-stars { color: var(--lime); font-size: 1rem; letter-spacing: 4px; margin-bottom: 1.2rem; }
+.rv-text { font-family: var(--display); font-style: italic; font-size: 1.1rem; line-height: 1.8; color: var(--cream); margin-bottom: 1.8rem; }
+.rv-auth { display: flex; align-items: center; gap: 1rem; }
+.rv-av { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--lime), var(--coral)); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 1rem; font-weight: 900; color: var(--ink); flex-shrink: 0; }
+.rv-name { font-size: .95rem; font-weight: 600; color: var(--cream); }
+.rv-role { font-family: var(--mono); font-size: .65rem; color: var(--grey1); letter-spacing: .06em; margin-top: .2rem; }
+
+/* ──────────────────────────────────────────
+   PORTFOLIO
+────────────────────────────────────────── */
+.port-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
+@media (max-width: 1000px) { .port-grid { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.5rem; } }
+
+.port-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--ink2); transition: border-color .3s, transform .3s; }
+.port-card:hover { border-color: rgba(200,255,0,.3); transform: translateY(-4px); }
+.port-bar { background: var(--ink3); padding: 1.2rem 1.8rem; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+.port-bar span { font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--grey1); }
+.port-bar a { font-family: var(--mono); font-size: .68rem; color: var(--lime); transition: opacity .2s; }
+.port-bar a:hover { opacity: .7; }
+.port-iframe { width: 100%; height: 600px; border: none; background: var(--ink3); }
+@media(max-width:768px){ .port-iframe { height: 450px; } }
+
+.port-cta { min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; text-align: center; gap: 1.2rem; }
+.port-cta-emoji { font-size: 3.5rem; filter: saturate(0); transition: filter .3s, transform .3s; }
+.port-card:hover .port-cta-emoji { filter: saturate(1); transform: scale(1.1); }
+.port-cta-h { font-family: var(--display); font-size: 2.5rem; font-weight: 900; color: var(--cream); }
+.port-cta-d { font-size: 1rem; color: var(--grey1); line-height: 1.7; max-width: 320px; font-weight: 300; }
+
+/* ──────────────────────────────────────────
+   BOOK — CINEMATIC FULL-WIDTH
+────────────────────────────────────────── */
+.book-sec { padding: 12rem var(--pad-x); background: var(--ink); position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+@media (max-width: 900px) { .book-sec { padding: 7rem var(--pad-x-mob); } }
+
+.book-sec::before { content: 'BOOK'; position: absolute; bottom: -6rem; right: -4rem; font-family: var(--display); font-size: 28rem; font-weight: 900; color: rgba(200,255,0,.02); line-height: 1; pointer-events: none; letter-spacing: -.05em; }
+@media (max-width: 900px) { .book-sec::before { font-size: 15rem; bottom: -2rem; right: -2rem;} }
+
+.book-inner { max-width: 1000px; position: relative; z-index: 1; }
+.book-eyebrow { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); margin-bottom: 2rem; display: flex; align-items: center; gap: .8rem; }
+.book-eyebrow::before { content:''; width:24px; height:1px; background:var(--lime); }
+.book-h { font-family: var(--display); font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 900; line-height: .9; letter-spacing: -.04em; color: var(--cream); margin-bottom: 2.5rem; }
+.book-h em { font-style: italic; color: var(--lime); }
+.book-sub { font-size: 1.1rem; color: var(--grey1); max-width: 540px; line-height: 1.8; margin-bottom: 3.5rem; font-weight: 300; }
+.book-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ──────────────────────────────────────────
+   BUTTONS
+────────────────────────────────────────── */
+.b-lime { display:inline-flex; align-items:center; gap:.6rem; background:var(--lime-btn); color:var(--lime-btn-text); font-family:var(--mono); font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:1rem 2.2rem; border-radius:4px; transition:all .2s; }
+.b-lime:hover { background:var(--cream); color:var(--ink); transform:translateY(-3px); box-shadow: 0 5px 15px var(--lime-alpha-hover); }
+.b-ghost { display:inline-flex; align-items:center; gap:.6rem; background:transparent; color:var(--cream); font-family:var(--mono); font-size:.75rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:1rem 2.2rem; border-radius:4px; border:1px solid var(--line); transition:all .2s; }
+.b-ghost:hover { border-color:var(--lime); color:var(--lime); transform:translateY(-3px); background: rgba(200,255,0,.03);}
+.b-wa { display:inline-flex; align-items:center; gap:.6rem; background:#128c4a; color:#fff; font-family:var(--mono); font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:1rem 2.2rem; border-radius:4px; transition:all .2s; }
+.b-wa:hover { background:#25d366; transform:translateY(-3px); box-shadow: 0 5px 15px rgba(37,211,102,.2);}
+.b-li { display:inline-flex; align-items:center; gap:.6rem; background:#0a66c2; color:#fff; font-family:var(--mono); font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:1rem 2.2rem; border-radius:4px; transition:all .2s; }
+.b-li:hover { background:#1a76d2; transform:translateY(-3px); box-shadow: 0 5px 15px rgba(26,118,210,.2);}
+
+/* ──────────────────────────────────────────
+   FOOTER
+────────────────────────────────────────── */
+footer { padding: 3rem var(--pad-x); border-top: 1px solid var(--line); background: var(--ink2); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+@media (max-width: 900px) { footer { padding: 3rem var(--pad-x-mob); flex-direction: column; text-align: center; gap: 1.5rem;} }
+.ft-logo { font-family: var(--display); font-size: 1.5rem; font-weight: 900; color: var(--cream); }
+.ft-logo em { font-style: italic; color: var(--lime); font-size: .85em; }
+.ft-copy { font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey1); }
+.ft-links { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;}
+.ft-links a { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--grey1); transition: color .2s; }
+.ft-links a:hover { color: var(--lime); }
+
+/* ──────────────────────────────────────────
+   SCROLL ANIMATION
+────────────────────────────────────────── */
+.fu { opacity: 0; transform: translateY(25px); transition: opacity .9s ease-out, transform .9s ease-out; }
+.fu.vis { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- cursor -->
+<div id="c"><div id="c-dot"></div><div id="c-ring"></div></div>
+
+<!-- ░░ NAV ░░ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Oiza Ibrahim <sup>Abuja, NG</sup></a>
+  <div class="nav-actions">
+    <ul class="nav-links">
+      <li><a href="#class">Masterclass</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#book" class="nav-book">Book My Services</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">
+      <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    <button class="menu-btn" aria-label="Toggle Menu" onclick="toggleMenu()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ░░ MOBILE MENU OVERLAY ░░ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="toggleMenu()" aria-label="Close Menu">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <ul class="mob-links">
+    <li><a href="#class" onclick="toggleMenu()">Masterclass</a></li>
+    <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+    <li><a href="#rates" onclick="toggleMenu()">Rates</a></li>
+    <li><a href="#results" onclick="toggleMenu()">Results</a></li>
+    <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+    <li><a href="#book" onclick="toggleMenu()" class="nav-book">Book My Services</a></li>
+  </ul>
+</div>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero">
+  <div class="hero-main">
+    <div class="hero-l">
+      <div class="hero-tag"><span class="dot-blink"></span> Available for new projects</div>
+      <div class="hero-name">OIZA<br>IBRAHIM</div>
+      <div class="hero-name-it">Meta & TikTok Ads<br>Specialist & Educator</div>
+      <p class="hero-bio">I turn ad budgets into revenue for Nigerian e-commerce brands, startups, and SMEs. 3+ years managing real campaigns for real brands — strategy, creatives, and execution that actually convert.</p>
+      <div class="hero-acts">
+        <a href="#book" class="b-lime">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book My Services
+        </a>
+        <a href="#class" class="b-ghost">Meta Ads Masterclass →</a>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hero-stat-list">
+        <div class="hstat">
+          <div><div class="hs-label">User Growth</div><div class="hs-ctx">Corperland.ng — 1,500 → 10,000+ in 6 months</div></div>
+          <div class="hs-num">566%</div>
+        </div>
+        <div class="hstat">
+          <div><div class="hs-label">Peak ROAS</div><div class="hs-ctx">₦30k spend → ₦700k revenue (Shot by Ivy)</div></div>
+          <div class="hs-num">23×</div>
+        </div>
+        <div class="hstat">
+          <div><div class="hs-label">Meta CTR</div><div class="hs-ctx">Premium One Rydz — industry avg is 0.5–1%</div></div>
+          <div class="hs-num">4.1%</div>
+        </div>
+        <div class="hstat">
+          <div><div class="hs-label">MAU/DAU Rate</div><div class="hs-ctx">Community retention 2–3× above benchmark</div></div>
+          <div class="hs-num">34.3%</div>
+        </div>
+      </div>
+      <div class="hero-class-pill">
+        <div class="hcp-eyebrow">Live Masterclass · May 2025</div>
+        <div class="hcp-title">Meta Ads for Nigerian Business Owners</div>
+        <div class="hcp-desc">Full-day online class. Real campaigns, real data, real results. Limited seats.</div>
+        <div class="hcp-meta">
+          <div class="hcp-price"><span>₦30,000</span>₦20,000</div>
+          <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="b-lime" style="font-size:.62rem;padding:.7rem 1.4rem">Register via WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ TICKER ░░ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Meta Ads Specialist</span>
+    <span class="ticker-item">566% User Growth</span>
+    <span class="ticker-item">23× ROAS</span>
+    <span class="ticker-item">TikTok Ads</span>
+    <span class="ticker-item">Nigerian Business Owners</span>
+    <span class="ticker-item">Growth Strategy</span>
+    <span class="ticker-item">4.1% CTR Achieved</span>
+    <span class="ticker-item">Live Masterclass May 2025</span>
+    <span class="ticker-item">3,800+ Signups Generated</span>
+    <span class="ticker-item">Power BI · Analytics</span>
+    <span class="ticker-item">Creative Direction</span>
+    <span class="ticker-item">Abuja · Nigeria</span>
+    <!-- dupe for seamless loop -->
+    <span class="ticker-item">Meta Ads Specialist</span>
+    <span class="ticker-item">566% User Growth</span>
+    <span class="ticker-item">23× ROAS</span>
+    <span class="ticker-item">TikTok Ads</span>
+    <span class="ticker-item">Nigerian Business Owners</span>
+    <span class="ticker-item">Growth Strategy</span>
+    <span class="ticker-item">4.1% CTR Achieved</span>
+    <span class="ticker-item">Live Masterclass May 2025</span>
+    <span class="ticker-item">3,800+ Signups Generated</span>
+    <span class="ticker-item">Power BI · Analytics</span>
+    <span class="ticker-item">Creative Direction</span>
+    <span class="ticker-item">Abuja · Nigeria</span>
+  </div>
+</div>
+
+<!-- ░░ MASTERCLASS ░░ -->
+<div class="class-section" id="class">
+  <div class="class-l">
+    <div class="fu">
+      <div class="class-kicker">Live Masterclass · May 2025</div>
+      <h2 class="class-headline">META<br>ADS FOR<br><em>Nigerian</em><br>BRANDS</h2>
+      <p class="class-intro">A full-day live session built from 3+ years of real campaign experience. No theory, no fluff — just the exact framework I use to run campaigns that convert for Nigerian businesses.</p>
+      <div class="class-specs">
+        <div class="spec-cell"><div class="spec-k">Format</div><div class="spec-v">Live Online · Google Meet</div></div>
+        <div class="spec-cell"><div class="spec-k">Date</div><div class="spec-v">First Week of May 2025</div></div>
+        <div class="spec-cell"><div class="spec-k">Duration</div><div class="spec-v">Three Days Live Session</div></div>
+        <div class="spec-cell"><div class="spec-k">Post-class</div><div class="spec-v">WhatsApp Community</div></div>
+      </div>
+      <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="b-lime" style="align-self:flex-start">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Register via WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="class-r">
+    <div class="fu">
+      <div class="price-blk">
+        <div class="price-top-bar">
+          <div>
+            <div class="price-was">₦30,000</div>
+            <div class="price-save">Save 33% — Early Bird</div>
+          </div>
+          <div>
+            <div class="price-amount"><sub>₦</sub>20k</div>
+          </div>
+        </div>
+        <ul class="incl-list">
+          <li><span class="il-ck">✓</span> Three-day live session — Meta Ads setup to scale</li>
+          <li><span class="il-ck">✓</span> Live demo account walkthroughs (real campaigns, real data)</li>
+          <li><span class="il-ck">✓</span> Campaign structure, audience research & creative strategy</li>
+          <li><span class="il-ck">✓</span> How to read your data and optimise without guessing</li>
+          <li><span class="il-ck">✓</span> Pixel installation + conversion tracking setup</li>
+          <li><span class="il-ck">✓</span> Live Q&A — bring your actual ad account problems</li>
+          <li><span class="il-ck">✓</span> Session recording + full resource pack</li>
+          <li><span class="il-ck">✓</span> WhatsApp community access post-class</li>
+        </ul>
+      </div>
+      <div class="spots">Limited seats. <b>DM on WhatsApp to confirm your spot.</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ ABOUT ░░ -->
+<section class="sec" id="about">
+  <div class="about-wrap fu">
+    <div class="about-aside">
+      <div class="about-num">03+</div>
+      <div class="about-num-label">Years of real campaigns</div>
+    </div>
+    <div class="about-body">
+      <h2 class="about-body-h">"I don't just run ads. I understand your product, your customer, your market."</h2>
+      <p>I'm Oiza Blessing Ibrahim — a digital marketer and media buyer based in Abuja. For 3+ years I've managed paid campaigns across e-commerce brands, photography businesses, food tech startups, SaaS platforms, and corporate service brands.</p>
+      <p>Most people selling ads management have never actually run a campaign that had real money on the line. I have. I've restructured offers, rebuilt creatives from scratch, and turned dying ad accounts into revenue engines — for Nigerian brands, with Nigerian budgets, for Nigerian audiences.</p>
+      <p>I also teach Meta Ads because the knowledge gap between Nigerian business owners and effective paid advertising is something I take personally.</p>
+      <div class="tag-cloud">
+        <span class="tc">Meta Ads</span><span class="tc">TikTok Ads</span><span class="tc">Growth Strategy</span><span class="tc">GTM Planning</span><span class="tc">Creative Direction</span><span class="tc">Power BI</span><span class="tc">Email Marketing</span><span class="tc">Community Growth</span><span class="tc">Analytics</span><span class="tc">Product Positioning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ SERVICES ░░ -->
+<section class="sec" id="services" style="padding-top:0">
+  <div class="svc-header fu">
+    <div>
+      <div class="sec-label">What I Do</div>
+      <h2 class="sec-h">WHAT I<br><i>DO</i></h2>
+    </div>
+    <p class="svc-header-d">Full-stack growth marketing from strategy through execution — every layer of paid acquisition, handled.</p>
+  </div>
+  <div>
+    <div class="svc-row fu">
+      <span class="svc-num">01</span>
+      <div><div class="svc-name">Meta Ads Management</div><div class="svc-desc">Full-funnel Facebook & Instagram campaigns. Audience research, pixel setup, A/B testing, weekly optimisation.</div></div>
+      <div class="svc-tags-w"><span class="st">Campaign Strategy</span><span class="st">Pixel Setup</span><span class="st">Retargeting</span><span class="st">A/B Testing</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+    <div class="svc-row fu">
+      <span class="svc-num">02</span>
+      <div><div class="svc-name">TikTok Ads Management</div><div class="svc-desc">Native-feeling campaigns. UGC-style creatives, TopFeed placements, performance tracking for Nigerian audiences.</div></div>
+      <div class="svc-tags-w"><span class="st">Spark Ads</span><span class="st">UGC</span><span class="st">Audience Targeting</span><span class="st">Budget Scaling</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+    <div class="svc-row fu">
+      <span class="svc-num">03</span>
+      <div><div class="svc-name">Growth Strategy & GTM</div><div class="svc-desc">Go-to-market planning, product positioning, funnel mapping. Taken brands from 1k to 11k+ users. Built on data.</div></div>
+      <div class="svc-tags-w"><span class="st">GTM</span><span class="st">Positioning</span><span class="st">Funnel Optimisation</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+    <div class="svc-row fu">
+      <span class="svc-num">04</span>
+      <div><div class="svc-name">Ad Creative Production</div><div class="svc-desc">Scripting, copywriting, creative direction. I step into editing and graphics when it matters. Built to convert.</div></div>
+      <div class="svc-tags-w"><span class="st">Copywriting</span><span class="st">Video Scripts</span><span class="st">Creative Direction</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+    <div class="svc-row fu">
+      <span class="svc-num">05</span>
+      <div><div class="svc-name">Analytics & Reporting</div><div class="svc-desc">Power BI dashboards, KPI tracking, funnel drop-off analysis. You'll know exactly what your money is doing.</div></div>
+      <div class="svc-tags-w"><span class="st">Power BI</span><span class="st">GA4</span><span class="st">SQL</span><span class="st">Attribution</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+    <div class="svc-row fu">
+      <span class="svc-num">06</span>
+      <div><div class="svc-name">Email & Community Marketing</div><div class="svc-desc">Nurture sequences, retention campaigns, community-led growth. 34.3% MAU/DAU — 2–3× above industry average.</div></div>
+      <div class="svc-tags-w"><span class="st">Email</span><span class="st">Retention</span><span class="st">Community Growth</span></div>
+      <div class="svc-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RESULTS ░░ -->
+<section class="sec" id="results" style="background:var(--ink2)">
+  <div class="fu">
+    <div class="sec-label">Proof of Work</div>
+    <h2 class="sec-h">NUMBERS<br>THAT DON'T <i>LIE</i></h2>
+  </div>
+  <div class="results-bento fu">
+    <div class="rb rb-1">
+      <div class="rb-num">566%</div>
+      <div class="rb-title">User Base Growth</div>
+      <div class="rb-ctx">1,500 → 10,000+ users at Corperland.ng in 6 months via Meta Ads + community strategy.</div>
+    </div>
+    <div class="rb rb-2">
+      <div class="rb-num">3,800+</div>
+      <div class="rb-title">Signups, One Campaign</div>
+      <div class="rb-ctx">Email + influencer + paid ads orchestrated into a single integrated campaign.</div>
+    </div>
+    <div class="rb rb-3">
+      <div class="rb-num">23×</div>
+      <div class="rb-title">Peak ROAS</div>
+      <div class="rb-ctx">Shot by Ivy photography brand. ₦30k spent, ₦700k revenue. Restructured offer + creatives.</div>
+    </div>
+    <div class="rb rb-4">
+      <div class="rb-num">4.1%</div>
+      <div class="rb-title">Meta Ad CTR — Premium One Rydz</div>
+      <div class="rb-ctx">Industry average sits at 0.5–1%. Achieved through optimised creative targeting while reducing cost-per-click.</div>
+    </div>
+    <div class="rb rb-5">
+      <div class="rb-num">1,215%</div>
+      <div class="rb-title">Organic Engagement Lift</div>
+      <div class="rb-ctx">Tech-Savvy Teacher Intl. Brand voice overhaul + authentic content strategy. 100% lead conversion rate on the campaign.</div>
+    </div>
+    <div class="rb rb-6">
+      <div class="rb-6-num">34.3%</div>
+      <div class="rb-6-info">
+        <div class="rb-6-label">MAU/DAU Retention Rate · Corperland</div>
+        <div class="rb-6-desc">Built community systems that kept users genuinely engaged on a daily basis. Industry benchmark is 10–20%. This is 2–3× above that — achieved through content strategy, lifecycle campaigns, and community design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RATES ░░ -->
+<section class="sec" id="rates">
+  <div class="fu">
+    <div class="sec-label">Pricing</div>
+    <h2 class="sec-h">TRANSPARENT<br><i>PRICING</i></h2>
+    <p class="sec-d">Monthly retainer for ongoing growth, or a one-off service to fix a specific problem fast. No hidden fees.</p>
+  </div>
+  <div class="rtoggle fu">
+    <button class="rtb on" onclick="showRet(this)">Monthly Retainer</button>
+    <button class="rtb" onclick="showOO(this)">One-Off Services</button>
+  </div>
+  <div id="retS" class="ret-sec fu">
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-tier">Starter</div>
+        <div class="pkg-name">Launch</div>
+        <div class="pkg-amount">₦80k</div>
+        <div class="pkg-period">per month</div>
+        <p class="pkg-desc">One platform, fully managed. For brands starting their paid ads journey.</p>
+        <ul class="pkg-feats">
+          <li><span class="ck">✓</span>1 platform (Meta OR TikTok)</li>
+          <li><span class="ck">✓</span>Up to ₦150k ad spend managed</li>
+          <li><span class="ck">✓</span>Campaign setup + audience research</li>
+          <li><span class="ck">✓</span>Ad copywriting included</li>
+          <li><span class="ck">✓</span>2 creatives per month</li>
+          <li><span class="ck">✓</span>Weekly performance report</li>
+          <li><span class="ck">✓</span>WhatsApp support Mon–Fri</li>
+        </ul>
+        <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="pkg-cta">Get Started →</a>
+      </div>
+      <div class="pkg feat">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Growth</div>
+        <div class="pkg-name">Scale</div>
+        <div class="pkg-amount">₦150k</div>
+        <div class="pkg-period">per month</div>
+        <p class="pkg-desc">Meta + TikTok, full-funnel strategy. For brands ready to dominate in their market.</p>
+        <ul class="pkg-feats">
+          <li><span class="ck">✓</span>Meta + TikTok both managed</li>
+          <li><span class="ck">✓</span>Up to ₦500k ad spend managed</li>
+          <li><span class="ck">✓</span>Full funnel: awareness → retargeting → conversion</li>
+          <li><span class="ck">✓</span>Pixel setup + lookalike audiences</li>
+          <li><span class="ck">✓</span>4 creatives per month</li>
+          <li><span class="ck">✓</span>Bi-weekly strategy call (30 min)</li>
+          <li><span class="ck">✓</span>Weekly ROAS breakdown report</li>
+          <li><span class="ck">✓</span>A/B testing on copy + creatives</li>
+        </ul>
+        <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="pkg-cta">Get Started →</a>
+      </div>
+      <div class="pkg">
+        <div class="pkg-tier">Performance</div>
+        <div class="pkg-name">Partner</div>
+        <div class="pkg-amount" style="font-size:2rem">₦100k + %</div>
+        <div class="pkg-period">setup fee + 10–15% of monthly ad spend</div>
+        <p class="pkg-desc">For established brands spending ₦1M+/month. I'm invested in your results — we grow together.</p>
+        <ul class="pkg-feats">
+          <li><span class="ck">✓</span>Everything in Scale Package</li>
+          <li><span class="ck">✓</span>₦1M+ monthly ad spend managed</li>
+          <li><span class="ck">✓</span>Performance-linked pricing</li>
+          <li><span class="ck">✓</span>Dedicated Slack channel, daily updates</li>
+          <li><span class="ck">✓</span>Full creative strategy + testing framework</li>
+          <li><span class="ck">✓</span>Monthly in-depth attribution report</li>
+          <li><span class="ck">✓</span>Priority 7-day availability</li>
+        </ul>
+        <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="pkg-cta">Let's Talk →</a>
+      </div>
+    </div>
+  </div>
+  <div id="ooS" class="oo-sec fu">
+    <div class="oo-table">
+      <div class="oo-head"><span>Service</span><span>Price</span><span>Delivery</span></div>
+      <div class="oo-r"><div><div class="oo-sn">Ad Account Audit</div><div class="oo-sd">Full Meta or TikTok account review — what's wasting money, what to fix, prioritised action plan.</div></div><div class="oo-price">₦25–40k</div><div class="oo-time">48 hrs</div></div>
+      <div class="oo-r"><div><div class="oo-sn">Campaign Setup (Handover)</div><div class="oo-sd">I build and launch your campaign from scratch, then hand over the keys for you to manage.</div></div><div class="oo-price">₦40–60k</div><div class="oo-time">3–5 days</div></div>
+      <div class="oo-r"><div><div class="oo-sn">Pixel Installation + Event Setup</div><div class="oo-sd">Meta or TikTok Pixel properly installed with conversion events configured on your store.</div></div><div class="oo-price">₦40k</div><div class="oo-time">24–48 hrs</div></div>
+      <div class="oo-r"><div><div class="oo-sn">Ad Creative Production (×3)</div><div class="oo-sd">Scripting, editing, and direction for 3 scroll-stopping creatives (Note: I provide direction/edits, you provide the raw footage/creator).</div></div><div class="oo-price">₦30–50k</div><div class="oo-time">3–4 days</div></div>
+      <div class="oo-r"><div><div class="oo-sn">1-Hour Strategy Consultation</div><div class="oo-sd">Deep-dive on your ads strategy. Walk away with a clear, actionable plan tailored to your brand.</div></div><div class="oo-price">₦20–30k</div><div class="oo-time">Scheduled</div></div>
+      <div class="oo-r"><div><div class="oo-sn">Full Campaign Strategy Document</div><div class="oo-sd">Written playbook: targeting, creative direction, budget allocation, and testing framework.</div></div><div class="oo-price">₦35–60k</div><div class="oo-time">3–5 days</div></div>
+      <div class="oo-r"><div><div class="oo-sn">Monthly Reporting Setup</div><div class="oo-sd">Custom Power BI or Google Sheets dashboard to track your own campaign performance.</div></div><div class="oo-price">₦25–45k</div><div class="oo-time">3–5 days</div></div>
+    </div>
+    <div class="oo-note">All prices in Nigerian Naira · 50% deposit to begin · DM on WhatsApp to book</div>
+  </div>
+</section>
+
+<!-- ░░ REVIEWS ░░ -->
+<section class="sec" id="reviews" style="padding-bottom:0">
+  <div class="fu" style="margin-bottom:3rem">
+    <div class="sec-label">Client Reviews</div>
+    <h2 class="sec-h">WHAT CLIENTS SAY<br>WHEN I'M <i>NOT IN THE ROOM</i></h2>
+  </div>
+</section>
+<div class="rv-outer fu" style="padding-bottom:7rem">
+  <div class="rv-track">
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Working with Blessing is like having an entire growth department in one person. Strategic mind, relentless drive to hit targets, creativity with data-backed decisions.</div><div class="rv-auth"><div class="rv-av">MC</div><div><div class="rv-name">Mercy Chioma</div><div class="rv-role">Client</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Oiza is an excellent strategist. She has a way of seeing your vision better than you explain it, and her delivery is always on point. Highly recommended.</div><div class="rv-auth"><div class="rv-av">CA</div><div><div class="rv-name">Charles Akano</div><div class="rv-role">Client</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">The Meta Ads campaign she ran during our peak season completely transformed our revenue. ₦30k spend turned into ₦700k in bookings. I didn't think that was possible until she showed me it was.</div><div class="rv-auth"><div class="rv-av">IB</div><div><div class="rv-name">Ivy B.</div><div class="rv-role">Shot by Ivy — Photography Brand</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">She doesn't just run ads — she understands the product, the customer, and the market. That's rare. Our TikTok went from zero to a 30k-view viral video in 10 days under her direction.</div><div class="rv-auth"><div class="rv-av">MN</div><div><div class="rv-name">Menus.ng Team</div><div class="rv-role">Food Tech Startup</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Oiza is an exceptional professional who consistently delivers high-quality results. Her resourcefulness, creativity, and problem-solving skills are truly impressive. A rare talent.</div><div class="rv-auth"><div class="rv-av">SI</div><div><div class="rv-name">Situk Ime</div><div class="rv-role">Client</div></div></div></div>
+    <!-- dupes -->
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Working with Blessing is like having an entire growth department in one person. Strategic mind, relentless drive to hit targets, creativity with data-backed decisions.</div><div class="rv-auth"><div class="rv-av">MC</div><div><div class="rv-name">Mercy Chioma</div><div class="rv-role">Client</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Oiza is an excellent strategist. She has a way of seeing your vision better than you explain it, and her delivery is always on point. Highly recommended.</div><div class="rv-auth"><div class="rv-av">CA</div><div><div class="rv-name">Charles Akano</div><div class="rv-role">Client</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">The Meta Ads campaign she ran during our peak season completely transformed our revenue. ₦30k spend turned into ₦700k in bookings. I didn't think that was possible until she showed me it was.</div><div class="rv-auth"><div class="rv-av">IB</div><div><div class="rv-name">Ivy B.</div><div class="rv-role">Shot by Ivy — Photography Brand</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">She doesn't just run ads — she understands the product, the customer, and the market. That's rare. Our TikTok went from zero to a 30k-view viral video in 10 days under her direction.</div><div class="rv-auth"><div class="rv-av">MN</div><div><div class="rv-name">Menus.ng Team</div><div class="rv-role">Food Tech Startup</div></div></div></div>
+    <div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">Oiza is an exceptional professional who consistently delivers high-quality results. Her resourcefulness, creativity, and problem-solving skills are truly impressive. A rare talent.</div><div class="rv-auth"><div class="rv-av">SI</div><div><div class="rv-name">Situk Ime</div><div class="rv-role">Client</div></div></div></div>
+  </div>
+</div>
+
+<!-- ░░ PORTFOLIO ░░ -->
+<section class="sec" id="portfolio" style="background:var(--ink2)">
+  <div class="fu">
+    <div class="sec-label">My Work</div>
+    <h2 class="sec-h">SEE IT IN<br><i>ACTION</i></h2>
+  </div>
+  <div class="port-grid fu">
+    <div class="port-card">
+      <div class="port-bar">
+        <span>Creative Portfolio — Canva</span>
+        <a href="https://gluco-cura.my.canva.site/portfolicreative" target="_blank">Open ↗</a>
+      </div>
+      <div class="port-cta">
+        <div class="port-cta-emoji">✦</div>
+        <div class="port-cta-h">Creative Work</div>
+        <p class="port-cta-d">Ad creatives, visual design, high-converting copy, and campaign work — on Canva.</p>
+        <a href="https://gluco-cura.my.canva.site/portfolicreative" target="_blank" class="b-lime" style="margin-top:.5rem">View on Canva ↗</a>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-bar">
+        <span>Full Portfolio — Case Studies & Campaigns</span>
+        <a href="https://ibrahimblessingoiza-collab.github.io/Portfolio/portfolio.html" target="_blank">Open full ↗</a>
+      </div>
+      <iframe class="port-iframe" src="https://ibrahimblessingoiza-collab.github.io/Portfolio/portfolio.html" loading="lazy" title="Oiza Portfolio"></iframe>
+    </div>
+  </div>
+  <div style="margin-top:2rem" class="fu">
+    <a href="https://ibrahimblessingoiza-collab.github.io/Portfolio/portfolio.html" target="_blank" class="b-ghost">View Full Portfolio →</a>
+  </div>
+</section>
+
+<!-- ░░ BOOK ░░ -->
+<section class="book-sec" id="book">
+  <div class="book-inner">
+    <div class="book-eyebrow fu">Work With Me</div>
+    <h2 class="book-h fu">READY TO<br>TURN YOUR<br>BUDGET<br>INTO <em>REVENUE?</em></h2>
+    <p class="book-sub fu">Whether you need a full-time ads partner, a one-off fix, or a seat in the May Meta Ads Masterclass — I respond within 2 hours on WhatsApp.</p>
+    <div class="book-btns fu">
+      <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank" class="b-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book on WhatsApp
+      </a>
+      <a href="https://ibrahimblessingoiza-collab.github.io/Portfolio/portfolio.html" target="_blank" class="b-ghost">View Portfolio ↗</a>
+      <a href="https://www.linkedin.com/in/oiza-ibrahim-84012519a/" target="_blank" class="b-li">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:ibrahimblessingoiza@gmail.com" class="b-ghost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="ft-logo">Oiza Ibrahim<em>.</em></div>
+  <div class="ft-copy">© 2025 Oiza Blessing Ibrahim · Meta & TikTok Ads Specialist · Abuja, Nigeria</div>
+  <div class="ft-links">
+    <a href="https://wa.me/message/T3GSOTVR6N2KP1" target="_blank">WhatsApp</a>
+    <a href="https://www.linkedin.com/in/oiza-ibrahim-84012519a/" target="_blank">LinkedIn</a>
+    <a href="https://ibrahimblessingoiza-collab.github.io/Portfolio/portfolio.html" target="_blank">Portfolio</a>
+    <a href="mailto:ibrahimblessingoiza@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cd = document.getElementById('c');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cd.style.left = mx + 'px';
+  cd.style.top = my + 'px';
+});
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('link-hover'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('link-hover'));
+});
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('solid', scrollY > 80);
+});
+
+/* ── INTERSECTION OBSERVER ── */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 55);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+/* ── RATE TOGGLE ── */
+function showRet(btn) {
+  document.querySelectorAll('.rtb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('retS').classList.remove('off');
+  document.getElementById('ooS').classList.remove('on');
+}
+function showOO(btn) {
+  document.querySelectorAll('.rtb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('retS').classList.add('off');
+  document.getElementById('ooS').classList.add('on');
+}
+
+/* ── MOBILE MENU TOGGLE ── */
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+  if (menu.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+/* ── LIGHT/DARK THEME TOGGLE ── */
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// Check for saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+  htmlElement.setAttribute('data-theme', 'light');
+  themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  if (currentTheme === 'light') {
+    htmlElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+    themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  } else {
+    htmlElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+  }
+});
+</script>
+</body>
+</html>
